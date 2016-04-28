@@ -29,9 +29,13 @@ class Router {
         foreach ($this->routes as $urlPattern => $path) {
 //            echo '<br>' . $urlPattern.'->' . $path;
             if(preg_match("~$urlPattern~", $uri)){
-                //echo $path;
+                
                 $segments = explode('/', $path);
-                Deb::varD($segments);
+                //Deb::varD($segments);
+                
+                $controllerName = array_shift($segments).'Controller';
+                $controllerName = ucfirst($controllerName);
+                echo $controllerName;
                         
             }
         }
