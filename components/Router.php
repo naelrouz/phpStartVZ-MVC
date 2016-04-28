@@ -1,6 +1,6 @@
 <?php
-require_once (ROOT.'/components/Deb.php');
-//namespace 
+require_once (ROOT.'/components/Debug.php');
+//use components\Debug;
 
 /**
  * Description of Router
@@ -18,9 +18,7 @@ class Router {
     
     public function run() 
     {   
-//        echo '<pre>';
-//        print_r($this->routes);
-//        echo '</pre>';
+        //Debug::varDump($this->routes);
 //        
 //        
 //      Получить строку запроса
@@ -31,11 +29,14 @@ class Router {
             if(preg_match("~$urlPattern~", $uri)){
                 
                 $segments = explode('/', $path);
-                //Deb::varD($segments);
+                //Debug::varDump($segments);
                 
                 $controllerName = array_shift($segments).'Controller';
                 $controllerName = ucfirst($controllerName);
-                echo $controllerName;
+                $actionName = 'action'.ucfirst(array_shift($segments));
+                echo 'Class: '.$controllerName.'<br>';
+                echo 'Action: '.$actionName.'<br>';
+                
                         
             }
         }

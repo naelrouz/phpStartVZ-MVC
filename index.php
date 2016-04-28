@@ -1,3 +1,6 @@
+
+<h3>FRONT CONTROLLER</h3>
+
 <?php
 
 // FRONT CONTROLLER
