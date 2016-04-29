@@ -1,5 +1,6 @@
 <?php
-require_once (ROOT.'/components/Debug.php');
+
+require_once (ROOT . '/components/Debug.php');
 //use components\Debug;
 
 /**
@@ -8,50 +9,63 @@ require_once (ROOT.'/components/Debug.php');
  * @author IVNovoselov
  */
 class Router {
+
     private $routes;
-    
-    function __construct() 
-    {
-        $routesPath =  ROOT.'/config/routes.php';
+
+    function __construct() {
+        $routesPath = ROOT . '/config/routes.php';
         $this->routes = include($routesPath);
     }
-    
-    public function run() 
-    {   
+
+    public function run() {
         //Debug::varDump($this->routes);
 //        
 //        
 //      Получить строку запроса
         $uri = $this->getUrl();
-//      Проверить на совпадение запросас  и routes
+//      Проверить какой контроллер и метод будет обрабатывать запрос
         foreach ($this->routes as $urlPattern => $path) {
-//            echo '<br>' . $urlPattern.'->' . $path;
-            if(preg_match("~$urlPattern~", $uri)){
+//           
+            if (preg_match("~$urlPattern~", $uri)) {
                 
-                $segments = explode('/', $path);
+                $internalRout = preg_replace("~$urlPattern~", $path, $uri);
+                echo '<br> Нужно сформировать ' . $internalRout;
+               
+                $segments = explode('/', $internalRout);
+                
                 //Debug::varDump($segments);
-                
-                $controllerName = array_shift($segments).'Controller';
+
+                $controllerName = array_shift($segments) . 'Controller';
                 $controllerName = ucfirst($controllerName);
-                $actionName = 'action'.ucfirst(array_shift($segments));
-                echo 'Class: '.$controllerName.'<br>';
-                echo 'Action: '.$actionName.'<br>';
                 
-                        
+// array_shift() извлекает первое значение массива array и возвращает его, сокращая размер array на один элемент.
+// ucfirst() Возвращает строку, в которой первый символ переведен в верхний регистр, если этот символ является буквой.                 
+                
+                $actionName = 'action' . ucfirst(array_shift($segments));
+                $param = $segments;
+                    
+//              Подключаем класс контроллера
+                $controllerFile = ROOT . '/controllers/' . $controllerName . '.php'; // определяем путь файла
+                if (file_exists($controllerFile)) { // проверка существиет ли файл
+                    include_once $controllerFile; // в случае успеха, подключение файла класса
+                }
+//                Создание обьекта и вызов нужного метода
+                $controllerObject = new $controllerName;
+                $result = call_user_func_array([$controllerObject, $actionName], $param);
+                if ($result != NULL) {
+                    break;
+                }  
             }
         }
-        
     }
-    
+
     /**
      * Returns request string
      */
-  
     private function getUrl() {
-        if(!empty($_SERVER['REQUEST_URI'])) {
-            return $url = trim($_SERVER['REQUEST_URI'], '/');  
-        }  
+        if (!empty($_SERVER['REQUEST_URI'])) {
+            return $url = trim($_SERVER['REQUEST_URI'], '/');
+        }
     }
-    
 
 }
