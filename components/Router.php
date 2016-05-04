@@ -29,7 +29,7 @@ class Router {
             if (preg_match("~$urlPattern~", $uri)) {
                 
                 $internalRout = preg_replace("~$urlPattern~", $path, $uri);
-                echo '<br> Нужно сформировать ' . $internalRout;
+               
                
                 $segments = explode('/', $internalRout);
                 
@@ -43,7 +43,8 @@ class Router {
                 
                 $actionName = 'action' . ucfirst(array_shift($segments));
                 $param = $segments;
-                    
+//                Debug::varDump($param);  
+//                die();
 //              Подключаем класс контроллера
                 $controllerFile = ROOT . '/controllers/' . $controllerName . '.php'; // определяем путь файла
                 if (file_exists($controllerFile)) { // проверка существиет ли файл

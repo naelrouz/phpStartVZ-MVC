@@ -1,4 +1,6 @@
 <?php
+require_once (ROOT . '/components/Debug.php');
+require_once (ROOT . '/models/News.php');
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -15,14 +17,23 @@ class NewsController
 {
     public function actionIndex() 
     {
-        echo 'Список новостей';
+        $newsList = News::getNewsList();
+        require_once ROOT.'/views/news/index.php';
+        
+        return TRUE;
+    }
+    
+      public function actionItem($id) 
+    {
+        $news = News::getNewsItemById($id);
+        Debug::varDump($news);
         return TRUE;
     }
     
      public function actionView($category, $id) 
     {
-        echo '<br>'.$category;
-        echo '<br>'.$id;
+        Debug::varDump($category);
+        Debug::varDump($id);
         return TRUE;
     }
 }
