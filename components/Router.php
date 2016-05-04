@@ -18,7 +18,7 @@ class Router {
     }
 
     public function run() {
-        //Debug::varDump($this->routes);
+    //Debug::varDump($this->routes);
 //        
 //        
 //      Получить строку запроса
