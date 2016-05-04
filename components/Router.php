@@ -18,8 +18,7 @@ class Router {
     }
 
     public function run() {
-    //Debug::varDump($this->routes);
-//        
+    //Debug::varDump($this->routes);     
 //        
 //      Получить строку запроса
         $uri = $this->getUrl();
@@ -29,7 +28,6 @@ class Router {
             if (preg_match("~$urlPattern~", $uri)) {
                 
                 $internalRout = preg_replace("~$urlPattern~", $path, $uri);
-               
                
                 $segments = explode('/', $internalRout);
                 
