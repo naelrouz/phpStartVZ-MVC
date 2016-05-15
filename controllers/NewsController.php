@@ -17,9 +17,8 @@ class NewsController
 {
     public function actionIndex() 
     {
-        //$newsList = News::getNewsList();
-        //require_once ROOT.'/views/news/index.php';
-        echo 'dsfs';
+        $newsList = News::getNewsList();
+        require_once ROOT.'/views/news/index.php';
         
         return TRUE;
     }
