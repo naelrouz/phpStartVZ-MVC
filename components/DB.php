@@ -15,8 +15,9 @@ class DB {
     public static function getConnection() 
     {
         $configPath = ROOT . '/config/db.php';
-        $conf = include_once ($configPath);
-        $db = new PDO($conf['dsn'], $conf['user'], $conf['password']); 
+        $conf = include ($configPath);
+        $db = new PDO($conf['dsn'], $conf['user'], $conf['password']);
+        $db->exec("set names utf8");
         return $db;
         
     }

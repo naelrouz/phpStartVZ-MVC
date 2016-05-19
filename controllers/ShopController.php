@@ -8,5 +8,11 @@
  */
 class ShopController
 {
+    public function actionIndex()
+    {
+        $newsList = News::getNewsList();
+        require_once ROOT.'/views/shop/index.php';
 
+        return TRUE;
+    }
 }

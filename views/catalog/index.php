@@ -7,7 +7,7 @@
                 <div class="left-sidebar">
                     <h2>Каталог</h2>
                     <div class="panel-group category-products">
-                        <?php foreach ($categories as $categoryItem): ?>
+                        <?php foreach ($categoryList as $categoryItem): ?>
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
@@ -26,23 +26,26 @@
                 <div class="features_items"><!--features_items-->
                     <h2 class="title text-center">Последние товары</h2>
                     
-                    <?php foreach ($latestProducts as $product): ?>
+                    <?php foreach ($lastAddedProducts as $productItem): ?>
                         <div class="col-sm-4">
                             <div class="product-image-wrapper">
                                 <div class="single-products">
                                     <div class="productinfo text-center">
-                                        <img src="/template/images/home/product1.jpg" alt="" />
-                                        <h2><?php echo $product['price'];?>$</h2>
+                                        <img src="<?php echo $productItem['image']; ?>" alt="" />
+                                        <h2>
+                                            <?php echo $productItem['price'];?>
+                                            <i class="fa fa-rub" aria-hidden="true"></i>
+                                        </h2>
                                         <p>
-                                            <a href="/product/<?php echo $product['id'];?>">
-                                                <?php echo $product['name'];?>
+                                            <a href="/product/<?php echo $productItem['id'];?>">
+                                                <?php echo $productItem['name'];?>
                                             </a>
                                         </p>
                                         <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>В корзину</a>
                                     </div>
-                                    <?php if ($product['is_new']): ?>
-                                        <img src="/template/images/home/new.png" class="new" alt="" />
-                                    <?php endif; ?>
+                                    <?php
+                                        echo  ($productItem['is_new']) ? '<img src="/images/home/new.png" class="new" alt="" />' : '';
+                                    ?>
                                 </div>
                             </div>
                         </div>

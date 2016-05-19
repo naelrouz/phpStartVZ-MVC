@@ -38,7 +38,7 @@
   <!-- Preloader -->
 
   //<![CDATA[
-    jQuery(window).load(function() { // makes sure the whole site is loaded
+    jQuery(window).load(function() { // makes sure the whole shop is loaded
       $('#status').fadeOut(); // will first fade out the loading animation
       $('#preloader').delay(700).fadeOut('slow'); // will fade out the white DIV that covers the website.
       $('body').delay(700).css({'overflow':'visible'});

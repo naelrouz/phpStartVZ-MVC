@@ -27,12 +27,12 @@
                     <div class="row">
                         <div class="col-sm-5">
                             <div class="view-product">
-                                <img src="/template/images/product-details/1.jpg" alt="" />
+                                <img src="/images/product-details/1.jpg" alt="" />
                             </div>
                         </div>
                         <div class="col-sm-7">
                             <div class="product-information"><!--/product-information-->
-                                <img src="/template/images/product-details/new.jpg" class="newarrival" alt="" />
+                                <img src="/images/product-details/new.jpg" class="newarrival" alt="" />
                                 <h2><?php echo $product['name'];?></h2>
                                 <p>Код товара: <?php echo $product['code'];?></p>
                                 <span>
