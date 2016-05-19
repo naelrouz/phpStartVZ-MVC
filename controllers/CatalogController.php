@@ -16,4 +16,13 @@ class CatalogController
 
         include_once (ROOT.'/views/catalog/index.php');
     }
+
+    public function actionCategory(){
+        $categoryList = Category::getCategoryList();
+        var_dump($categoryList);
+        $ProductsFromCategory = Products::getProductsFromCategory();
+        var_dump($ProductsFromCategory);
+
+        include_once (ROOT.'/views/catalog/index.php');
+    }
 }
