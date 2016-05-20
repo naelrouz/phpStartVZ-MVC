@@ -1,5 +1,5 @@
 <?php
-
+echo 'Hi';
 // FRONT CONTROLLER
 
 // Общие настройки
