@@ -10,7 +10,7 @@ class CatalogController
 {
     public function actionIndex(){
         $categoryList = Category::getCategoryList();
-        var_dump($categoryList);
+        //var_dump($categoryList);
         $lastAddedProducts = Products::getLastAddedProducts();
         var_dump($lastAddedProducts);
 

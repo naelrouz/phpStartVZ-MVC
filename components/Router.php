@@ -33,7 +33,7 @@ class Router {
                
                 $segments = explode('/', $internalRout);
                 
-                //Debug::varDump($segments);
+                Debug::varDump($segments);
 
                 $controllerName = array_shift($segments) . 'Controller';
                 $controllerName = ucfirst($controllerName);
@@ -43,7 +43,7 @@ class Router {
                 
                 $actionName = 'action' . ucfirst(array_shift($segments));
                 $param = $segments;
-//                Debug::varDump($param);  
+//                Debug::varDump($param);
 //                die();
 //              Подключаем класс контроллера
                 $controllerFile = ROOT . '/controllers/' . $controllerName . '.php'; // определяем путь файла
