@@ -6,6 +6,7 @@
             <div class="col-sm-3">
                 <div class="left-sidebar">
                 <?php include_once (ROOT.'/views/layouts/leftCategoryMenu.php')?>
+                </div>
             </div>
 
             <div class="col-sm-9 padding-right">

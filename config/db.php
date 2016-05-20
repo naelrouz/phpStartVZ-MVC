@@ -1,8 +1,8 @@
 <?php
 return [
-'dsn' => 'mysql:host=localhost;dbname=ps-mvc', 
-'user' => 'ps-mvc',
-'password' => 'jvy9DUed8hDDQZxs',
+'dsn' => 'mysql:host=localhost;dbname=vz-mvc',
+'user' => 'mysql',
+'password' => 'mysql',
  'opt' => [
      PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
      PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,

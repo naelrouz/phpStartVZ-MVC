@@ -10,7 +10,8 @@ class ShopController
 {
     public function actionIndex()
     {
-        $newsList = News::getNewsList();
+        $lastAddedProducts = Products::getLastAddedProducts();
+        $categoryList = Category::getCategoryList();
         require_once ROOT.'/views/shop/index.php';
 
         return TRUE;
