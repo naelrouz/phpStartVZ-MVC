@@ -23,9 +23,10 @@ class Products
         return $date;
     }
 
-    static function getProductsFromCategory($category_id){
+    static function getProductsFromCategory($category_id, $page = 1){
+        $offset = self::COUNT_VIEW_LAST_ADDED_PRODUCTS - 1;
         $dbh = DB::getConnection();
-        $sql = "SELECT * FROM product WHERE category_id =  ORDER BY id DESC LIMIT :count";
+        $sql = "SELECT * FROM product WHERE category_id = :category_id  ORDER BY id DESC LIMIT :count OFFSET 3";
         $sth = $dbh->prepare($sql);
         $sth->bindValue(':count', self::COUNT_VIEW_LAST_ADDED_PRODUCTS, PDO::PARAM_INT);
         $sth->bindValue(':category_id', $category_id, PDO::PARAM_INT);
@@ -34,4 +35,25 @@ class Products
         $date = $sth->fetchAll();
         return $date;
     }
+
+    static function getProductById($product_id){
+        $dbh = DB::getConnection();
+        $sql = "SELECT * FROM product WHERE id = :product_id";
+        $sth = $dbh->prepare($sql);
+        $sth->bindValue(':product_id', $product_id, PDO::PARAM_INT);
+        $sth->execute();
+        $date = $sth->fetchAll();
+        return $date['0'];
+    }
+    static function getTotalProductInCategory($category_id){
+        $dbh = DB::getConnection();
+        $sql = "SELECT count(*) AS count FROM product WHERE category_id = :category_id";
+        $sth = $dbh->prepare($sql);
+        $sth->bindValue(':category_id', $category_id, PDO::PARAM_INT);
+        $sth->execute();
+        $date = $sth->fetchAll();
+
+        return (int)$date['0']['count'];
+    }
+
 }

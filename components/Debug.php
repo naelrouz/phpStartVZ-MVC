@@ -14,7 +14,10 @@
 class Debug {
     public static function varDump($param) {
         echo '<pre>';
-        echo '<pre>'.var_dump($param).'</pre>';
+        echo var_dump($param);
         echo '</pre>';
+    }
+    public static function infoForThis($param){
+
     }
 }

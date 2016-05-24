@@ -1,6 +1,5 @@
 <?php
 
-require_once (ROOT . '/components/Debug.php');
 //use components\Debug;
 
 /**
@@ -33,7 +32,7 @@ class Router {
                
                 $segments = explode('/', $internalRout);
                 
-                Debug::varDump($segments);
+//                Debug::varDump($segments);
 
                 $controllerName = array_shift($segments) . 'Controller';
                 $controllerName = ucfirst($controllerName);

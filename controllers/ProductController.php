@@ -11,9 +11,14 @@
  *
  * @author nael
  */
-class ProductsController {
-    public function actionList() {
-        echo 'ProductsController actionList';
+class ProductController
+{
+    public function actionView($product_id) {
+//        Debug::varDump($product_id);
+        $categoryList = Category::getCategoryList();
+        $product = Products::getProductById($product_id);
+        include_once (ROOT.'/views/product/view.php');
+
         return TRUE;
     }
 }

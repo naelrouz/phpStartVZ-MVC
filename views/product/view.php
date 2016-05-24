@@ -5,20 +5,7 @@
         <div class="row">
                         <div class="col-sm-3">
                 <div class="left-sidebar">
-                    <h2>Каталог</h2>
-                    <div class="panel-group category-products">
-                        <?php foreach ($categories as $categoryItem): ?>
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a href="/category/<?php echo $categoryItem['id'];?>">
-                                            <?php echo $categoryItem['name'];?>
-                                        </a>
-                                    </h4>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
+                        <?php include_once (ROOT.'/views/layouts/leftCategoryMenu.php')?>
                 </div>
             </div>
 
@@ -27,7 +14,7 @@
                     <div class="row">
                         <div class="col-sm-5">
                             <div class="view-product">
-                                <img src="/images/product-details/1.jpg" alt="" />
+                                <img src="<?php echo $product['image'];?>" alt="" />
                             </div>
                         </div>
                         <div class="col-sm-7">
@@ -36,7 +23,10 @@
                                 <h2><?php echo $product['name'];?></h2>
                                 <p>Код товара: <?php echo $product['code'];?></p>
                                 <span>
-                                    <span>US $<?php echo $product['price'];?></span>
+                                    <span>
+                                        <?php echo $product['price'];?>
+                                        <i class="fa fa-rub" aria-hidden="true"></i>
+                                    </span>
                                     <label>Количество:</label>
                                     <input type="text" value="3" />
                                     <button type="button" class="btn btn-fefault cart">
@@ -46,7 +36,7 @@
                                 </span>
                                 <p><b>Наличие:</b> На складе</p>
                                 <p><b>Состояние:</b> Новое</p>
-                                <p><b>Производитель:</b> D&amp;G</p>
+                                <p><b>Производитель:</b> <?php echo $product['brand'];?></p>
                             </div><!--/product-information-->
                         </div>
                     </div>

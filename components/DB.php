@@ -16,7 +16,7 @@ class DB {
     {
         $configPath = ROOT . '/config/db.php';
         $conf = include ($configPath);
-        $db = new PDO($conf['dsn'], $conf['user'], $conf['password']);
+        $db = new PDO($conf['dsn'], $conf['user'], $conf['password'],$conf['opt']);
         $db->exec("set names utf8");
         return $db;
         

@@ -8,9 +8,9 @@
         <title>Главная</title>
         <link href="/css/bootstrap.min.css" rel="stylesheet">
         <link href="/css/font-awesome.min.css" rel="stylesheet">
-        <link href="/css/prettyPhoto.css" rel="stylesheet">
-        <link href="/css/price-range.css" rel="stylesheet">
-        <link href="/css/animate.css" rel="stylesheet">
+<!--        <link href="/css/prettyPhoto.css" rel="stylesheet">-->
+<!--        <link href="/css/price-range.css" rel="stylesheet">-->
+<!--        <link href="/css/animate.css" rel="stylesheet">-->
         <link href="/css/main.css" rel="stylesheet">
         <link href="/css/responsive.css" rel="stylesheet">
         <!--[if lt IE 9]>
@@ -32,8 +32,8 @@
                         <div class="col-sm-6">
                             <div class="contactinfo">
                                 <ul class="nav nav-pills">
-                                    <li><a href="#"><i class="fa fa-phone"></i> +38 093 000 11 22</a></li>
-                                    <li><a href="#"><i class="fa fa-envelope"></i> zinchenko.us@gmail.com</a></li>
+                                    <li><a href="#"><i class="fa fa-phone"></i>Phone number</a></li>
+                                    <li><a href="#"><i class="fa fa-envelope"></i> E-mail</a></li>
                                 </ul>
                             </div>
                         </div>

@@ -13,7 +13,7 @@
                 <div class="features_items"><!--features_items-->
                     <h2 class="title text-center">Последние товары</h2>
                     
-                    <?php foreach ($lastAddedProducts as $productItem): ?>
+                    <?php foreach ($products as $productItem){ ?>
                         <div class="col-sm-4">
                             <div class="product-image-wrapper">
                                 <div class="single-products">
@@ -25,6 +25,7 @@
                                         </h2>
                                         <p>
                                             <a href="/product/<?php echo $productItem['id'];?>">
+                                                <?php echo $productItem['id'];?> ~
                                                 <?php echo $productItem['name'];?>
                                             </a>
                                         </p>
@@ -36,7 +37,8 @@
                                 </div>
                             </div>
                         </div>
-                    <?php endforeach;?>                   
+                    <?php }?>
+                    <?php echo $pagination->get();?>
 
                 </div><!--features_items-->
 

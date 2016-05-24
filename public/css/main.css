@@ -8,9 +8,9 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background:;
+  /*background:;*/
   position: relative;
-  font-weight:400px;
+  font-weight:400;
 }
 
 ul li {
@@ -1179,7 +1179,7 @@ h2.title {
 .view-product img {
   border: 1px solid #F7F7F0;
   height: 380px;
-  width: 100%;
+  width: auto;
 }
 
 .view-product h3 {
