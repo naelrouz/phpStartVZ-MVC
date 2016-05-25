@@ -1,13 +1,18 @@
 <?php
 
 return [
-    //'product/([0-9]+)' => 'product/view/$1', // выбранный товар
-    '' => 'shop/index',
-    'shop' => 'shop/index',
-    'catalog' => 'catalog/index', // переход к разделу с каталогом
-    'category/([0-9]+)' => 'catalog/category/$1', // выбранная категория
+
+
+    'register' => 'user/register',
     'category/([0-9]+)/page-([0-9]+)' => 'catalog/category/$1/$2', // выбранная категория + страница пагинации
+    'category/([0-9]+)' => 'catalog/category/$1', // выбранная категория
     'product/([0-9]+)' => 'product/view/$1', // выбранный товар
+
+
+
+    'catalog' => 'catalog/index', // переход к разделу с каталогом
+    'shop' => 'shop/index',
+    '' => 'shop/index',
 
 
 

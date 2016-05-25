@@ -23,13 +23,15 @@ class Products
         return $date;
     }
 
-    static function getProductsFromCategory($category_id, $page = 1){
-        $offset = self::COUNT_VIEW_LAST_ADDED_PRODUCTS - 1;
+    static function getProductsFromCategory($category_id, $page){
+        $limit = self::COUNT_VIEW_LAST_ADDED_PRODUCTS;
+        $offset = ($page - 1) * $limit;
         $dbh = DB::getConnection();
-        $sql = "SELECT * FROM product WHERE category_id = :category_id  ORDER BY id DESC LIMIT :count OFFSET 3";
+        $sql = "SELECT * FROM product WHERE category_id = :category_id  ORDER BY id DESC LIMIT :count OFFSET :offset";
         $sth = $dbh->prepare($sql);
         $sth->bindValue(':count', self::COUNT_VIEW_LAST_ADDED_PRODUCTS, PDO::PARAM_INT);
         $sth->bindValue(':category_id', $category_id, PDO::PARAM_INT);
+        $sth->bindValue(':offset', $offset, PDO::PARAM_INT);
         //$sth->bindValue(':category_id', $category_id, PDO::PARAM_STR);
         $sth->execute();
         $date = $sth->fetchAll();

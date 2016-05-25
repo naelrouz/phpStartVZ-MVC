@@ -38,14 +38,18 @@
                             </div>
                         </div>
                     <?php }?>
-                    <?php echo $pagination->get();?>
-
                 </div><!--features_items-->
-
-
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-9 padding-right">
+                            <?php echo $pagination->get();?>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
 </section>
 
 <?php include ROOT . '/views/layouts/footer.php'; ?>
