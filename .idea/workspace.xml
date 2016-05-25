@@ -1,20 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e3bd5709-6c21-4f1e-b60d-ed7679e81c77" name="Default" comment="Registration 25/05">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controllers/CabinetController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/cabinet/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/user/login.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/template-html/login.html" afterPath="" />
+    <list default="true" id="e3bd5709-6c21-4f1e-b60d-ed7679e81c77" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/user.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/vz-mvc-25-05-16.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/Router.php" afterPath="$PROJECT_DIR$/components/Router.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.php" afterPath="$PROJECT_DIR$/config/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/UserController.php" afterPath="$PROJECT_DIR$/controllers/UserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/User.php" afterPath="$PROJECT_DIR$/models/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template-html/cart.html" afterPath="$PROJECT_DIR$/template-html/cart.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template-html/checkout.html" afterPath="$PROJECT_DIR$/template-html/checkout.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template-html/contact.html" afterPath="$PROJECT_DIR$/template-html/contact.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/layouts/header.php" afterPath="$PROJECT_DIR$/views/layouts/header.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/user/register.php" afterPath="$PROJECT_DIR$/views/user/register.php" />
     </list>
     <ignored path="vz-mvc.iws" />
@@ -482,7 +472,13 @@
       <option name="project" value="LOCAL" />
       <updated>1464157699206</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="25/05 - Work on a private office">
+      <created>1464183756108</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1464183756108</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -492,7 +488,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1421875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1421875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946146" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -547,7 +543,8 @@
     <MESSAGE value="15:45" />
     <MESSAGE value="Pagination" />
     <MESSAGE value="Registration 25/05" />
-    <option name="LAST_COMMIT_MESSAGE" value="Registration 25/05" />
+    <MESSAGE value="25/05 - Work on a private office" />
+    <option name="LAST_COMMIT_MESSAGE" value="25/05 - Work on a private office" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
