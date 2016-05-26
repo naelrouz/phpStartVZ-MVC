@@ -22,7 +22,8 @@ class CatalogController
         $categoryList = Category::getCategoryList();
         $products = Products::getProductsFromCategory($category_id, $page);
 //
-        //$pagination = new Pagination($total, $page, $count, 'page-');
+        $pagination = new Pagination($total, $page, $count, 'page-');
+//        $pagination = new Pagination(10, 1, 3, 'page-');
         include_once (ROOT.'/views/catalog/catalog.php');
     }
 }
