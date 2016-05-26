@@ -20,17 +20,17 @@
                         <form id="main-contact-form" class="contact-form row" name="contact-form" method="post">
                             <div class="form-group col-md-6">
                                 <?php echo $errors['name']; ?>
-                                <input type="text" name="name" class="form-control" required="required" placeholder="Name">
+                                <input type="text" name="name" class="form-control" required="required" placeholder="Ваше имя">
                             </div>
                             <div class="form-group col-md-6">
                                 <?php echo $errors['email']; ?>
                                 <input type="email" name="email" class="form-control" required="required" placeholder="Email">
                             </div>
                             <div class="form-group col-md-12">
-                                <input type="text" name="subject" class="form-control" required="required" placeholder="Subject">
+                                <input type="text" name="subject" class="form-control" required="required" placeholder="Тема">
                             </div>
                             <div class="form-group col-md-12">
-                                <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Your Message Here"></textarea>
+                                <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Сообщение введите здесь"></textarea>
                             </div>
                             <div class="form-group col-md-12">
                                 <input type="submit" name="submit" class="btn btn-primary pull-right" value="Отправить"

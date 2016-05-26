@@ -11,16 +11,20 @@ class UserController
 
     public function actionLogin()
     {
+        $li_email = isset($_POST['email']) ? $_POST['email'] : '';
+        $li_password = isset($_POST['password']) ? $_POST['password'] : '';
+        $li_errors = '';
+
+        $name = isset($_POST['name']) ? $_POST['name'] : '';
+        $email = isset($_POST['email']) ? $_POST['email'] : '';
+        $password = isset($_POST['password']) ? $_POST['password'] : '';
+        $registeRresult = '';
+        $errors = '';
 
         if (isset($_POST['submit'])) {
 
-
-            $li_email = isset($_POST['email']) ? $_POST['email'] : '';
-            $li_password = isset($_POST['password']) ? $_POST['password'] : '';
-
 //            Блок валиации
             $errors = false;
-
 
             if (!User::checkEmail($li_email)) {
                 $li_errors['email'] = 'Не коректный E-mail';
@@ -53,12 +57,17 @@ class UserController
 
     public function actionRegister()
     {
+        $name = isset($_POST['name']) ? $_POST['name'] : '';
+        $email = isset($_POST['email']) ? $_POST['email'] : '';
+        $password = isset($_POST['password']) ? $_POST['password'] : '';
+        $registeRresult = ' ';
+
+        $li_email = isset($_POST['email']) ? $_POST['email'] : '';
+        $li_password = isset($_POST['password']) ? $_POST['password'] : '';
+        $li_errors = '';
+
+
         if (isset($_POST['submit'])) {
-
-            $name = isset($_POST['name']) ? $_POST['name'] : '';
-            $email = isset($_POST['email']) ? $_POST['email'] : '';
-            $password = isset($_POST['password']) ? $_POST['password'] : '';
-
 //            Блок валиации
             $errors = false;
 
@@ -79,12 +88,11 @@ class UserController
             }
             if (!$errors) {
                 $registeRresult = User::register($name, $email, $password);
-
             }
         }
 
 
-        require_once ROOT . '/views/user/register.php';
+        require_once ROOT . '/views/user/login.php';
 
         return true;
     }

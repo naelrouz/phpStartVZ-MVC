@@ -50,6 +50,7 @@ class User
     public static function auth($userId){
         @session_start();
         $_SESSION['user_id'] = $userId;
+        echo 'auth';
     }
 
     public static function logOut(){
@@ -60,7 +61,7 @@ class User
 
     public static function checkLogged()
     {
-        session_start();
+        @session_start();
         if(isset($_SESSION['user_id'])){
             return $_SESSION['user_id'];
         }else {
@@ -70,8 +71,8 @@ class User
 
     public static function isGuest()
     {
-        session_start();
-        if(!$_SESSION['user_id']){
+        @session_start();
+        if(!isset($_SESSION['user_id'])){
             return true;
         }else{
             return false;

@@ -14,15 +14,19 @@ class SiteController
 
     public static function actionContacts(){
 
+        $name = isset($_POST['name']) ? $_POST['name'] : '';
+        $email = isset($_POST['email']) ? $_POST['email'] : '';
+        $subject = isset($_POST['subject']) ? $_POST['subject'] : '';
+        $message = isset($_POST['message']) ? $_POST['message'] : '';
+        $emailSendResult = false;
+        $errors = false;
+
         if (isset($_POST['submit'])) {
 
-            $name = isset($_POST['name']) ? $_POST['name'] : '';
-            $email = isset($_POST['email']) ? $_POST['email'] : '';
-            $subject = isset($_POST['subject']) ? $_POST['subject'] : '';
-            $message = isset($_POST['message']) ? $_POST['message'] : '';
+
 
 //            Блок валиации
-            $errors = false;
+
 
             if (!User::checkName($name)) {
                 $errors['name'] = 'Имя должно быть не менее 2 символов';
