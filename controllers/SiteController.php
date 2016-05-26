@@ -18,6 +18,8 @@ class SiteController
 
             $name = isset($_POST['name']) ? $_POST['name'] : '';
             $email = isset($_POST['email']) ? $_POST['email'] : '';
+            $subject = isset($_POST['subject']) ? $_POST['subject'] : '';
+            $message = isset($_POST['message']) ? $_POST['message'] : '';
 
 //            Блок валиации
             $errors = false;
@@ -32,10 +34,13 @@ class SiteController
 
 
             if (!$errors) {
-                $mail = 'nael_rouz@maol.ru';
-                $subject = 'Тема письма';
-                $message = 'Тело письма';
-                $result = mail($mail,$subject,$message);
+//
+//                $email = 'nael_rouz@maol.ru';
+//                $subject = 'Тема письма';
+//                $message = 'Тело письма';
+//
+                $message = '<h4>'.$name.'<h4>'.'<br>'.$message;
+                $emailSendResult = mail($email,$subject,$message);
                 Debug::varDump($result);
 
             }
