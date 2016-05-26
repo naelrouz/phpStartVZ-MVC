@@ -38,12 +38,17 @@ class UserController
                 $li_errors['password'] = 'Пользователя с таким E-mail и паролем не зарегистрировано';
             } else  {
                 User::auth($userId);
-                //header("Location: /cabinet");
+                header("Location: /cabinet");
             }
         }
 
         require_once ROOT . '/views/user/login.php';
         return true;
+    }
+
+    public function actionLogout()
+    {
+        User::logOut();
     }
 
     public function actionRegister()

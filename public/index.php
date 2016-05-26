@@ -4,6 +4,8 @@
 // Общие настройки
 ini_set('display_errors', 1);
 //
+session_start();
+//
 // Подключение файлов системы
 define('ROOT', dirname(dirname(__FILE__)));
 // Classes autoload

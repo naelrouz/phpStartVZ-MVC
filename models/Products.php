@@ -17,7 +17,6 @@ class Products
 
         $sth = $dbh->prepare($sql);
         $sth->bindValue(':count', self::COUNT_VIEW_LAST_ADDED_PRODUCTS, PDO::PARAM_INT);
-        //$sth->bindValue(':colour', $colour, PDO::PARAM_STR);
         $sth->execute();
         $date = $sth->fetchAll();
         return $date;
@@ -32,7 +31,6 @@ class Products
         $sth->bindValue(':count', self::COUNT_VIEW_LAST_ADDED_PRODUCTS, PDO::PARAM_INT);
         $sth->bindValue(':category_id', $category_id, PDO::PARAM_INT);
         $sth->bindValue(':offset', $offset, PDO::PARAM_INT);
-        //$sth->bindValue(':category_id', $category_id, PDO::PARAM_STR);
         $sth->execute();
         $date = $sth->fetchAll();
         return $date;

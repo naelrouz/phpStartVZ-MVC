@@ -36,11 +36,59 @@ class User
         }
     }
 
-    public static function auth($userId){
-        @session_start();
-        $_SESSION['user'] = $userId;
+    public static function edit($userId, $name, $password){
+        $dbh = DB::getConnection();
+        $sql = "UPDATE user SET name = :name, password = :password WHERE id = :userId";
+        $sth = $dbh->prepare($sql);
+        $sth->bindValue(':userId', $userId, PDO::PARAM_INT);
+        $sth->bindValue(':name', $name, PDO::PARAM_STR);
+        $sth->bindValue(':password', $password, PDO::PARAM_STR);
+
+        return $sth->execute();
     }
 
+    public static function auth($userId){
+        @session_start();
+        $_SESSION['user_id'] = $userId;
+    }
+
+    public static function logOut(){
+        @session_start();
+        unset($_SESSION['user_id']);
+        header('Location: /');
+    }
+
+    public static function checkLogged()
+    {
+        session_start();
+        if(isset($_SESSION['user_id'])){
+            return $_SESSION['user_id'];
+        }else {
+            header('Location: /login');
+        }
+    }
+
+    public static function isGuest()
+    {
+        session_start();
+        if(!$_SESSION['user_id']){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public static function getUserById($user_id)
+    {
+        $dbh = DB::getConnection();
+        $sql = "SELECT * FROM User WHERE id = :user_id ";
+        $sth = $dbh->prepare($sql);
+        $sth->bindValue(':user_id', $user_id, PDO::PARAM_INT);
+
+        $sth->execute();
+        $user = $sth->fetch();
+        return $user;
+    }
 
     public static function checkEmailIsExiste($email){
         $dbh = DB::getConnection();

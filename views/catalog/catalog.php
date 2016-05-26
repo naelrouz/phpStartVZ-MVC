@@ -26,12 +26,12 @@
                 <div class="features_items"><!--features_items-->
                     <h2 class="title text-center">Последние товары</h2>
                     
-                    <?php foreach ($latestProducts as $product): ?>
+                    <?php foreach ($products as $product): ?>
                         <div class="col-sm-4">
                             <div class="product-image-wrapper">
                                 <div class="single-products">
                                     <div class="productinfo text-center">
-                                        <img src="/images/home/product1.jpg" alt="" />
+                                        <img src="<?php echo $product['image'];?>" alt="" />
                                         <h2><?php echo $product['price'];?>$</h2>
                                         <p>
                                             <a href="/product/<?php echo $product['id'];?>">
