@@ -7,9 +7,15 @@
                     <a href="/cabinet/edit">Изменить личные двнные</a>
                     <br>
                     <a href="/contacts">Test mail</a>
+                    <br>  <br>
+                    <table class="inner" border="1"></table>
+                    <br>  <br>
+
+                    <button id="ajax" type="submit" name="submit" class="btn btn-default">Получить</button>
                 </div><!--/login form-->
             </div>
         </div>
-
     </section><!--/form-->
 <?php include_once ROOT . '/views/layouts/footer.php' ?>
+
+

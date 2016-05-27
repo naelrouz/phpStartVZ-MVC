@@ -42,8 +42,13 @@
                                                     <?php echo $product['name']; ?>
                                                 </a>
                                             </p>
-                                            <a href="#" class="btn btn-default add-to-cart"><i
-                                                    class="fa fa-shopping-cart"></i>В корзину</a>
+                                            <a
+                                                href="/cart/add/<?php echo $product['id']; ?>"
+                                                class="btn btn-default add-to-cart"
+                                                data-id="<?php echo $product['id']; ?>">
+                                                <i class="fa fa-shopping-cart"></i>
+                                                В корзину
+                                            </a>
                                         </div>
                                         <?php if ($product['is_new']): ?>
                                             <img src="/images/home/new.png" class="new" alt=""/>
@@ -57,7 +62,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-sm-9 padding-right">
-                                <?php echo $pagination->get();?>
+                                <?php echo $pagination ? $pagination->get() : ''; ?>
                             </div>
                         </div>
                     </div>

@@ -1,19 +1,20 @@
 <?php
 
 return [
-
-
+    'login' => 'user/login',
     'category/([0-9]+)/page-([0-9]+)' => 'catalog/category/$1/$2', // выбранная категория + страница пагинации
     'category/([0-9]+)' => 'catalog/category/$1', // выбранная категория
     'product/([0-9]+)' => 'product/view/$1', // выбранный товар
     'catalog' => 'catalog/index', // переход к разделу с каталогом
-
+//
     'cabinet/edit' => 'cabinet/edit',
     'cabinet' => 'cabinet/index',
-
+    'cart/add/([0-9]+)' => 'cart/add/$1',
     'contacts' => 'site/contacts',
+//    REST
+    'ajax' => 'site/ajax',
+//
 
-    'login' => 'user/login',
     'logout' => 'user/logout',
     'register' => 'user/register',
 

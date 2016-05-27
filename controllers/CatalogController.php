@@ -11,6 +11,7 @@ class CatalogController
     public function actionIndex(){
         $categoryList = Category::getCategoryList();
         $products = Products::getLastAddedProducts();
+        $pagination = false;
         include_once (ROOT.'/views/catalog/catalog.php');
     }
 

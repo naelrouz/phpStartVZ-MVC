@@ -41,7 +41,7 @@ class UserController
             if (!$userId) {
                 $li_errors['password'] = 'Пользователя с таким E-mail и паролем не зарегистрировано';
             } else  {
-                User::auth($userId);
+                //User::auth($userId);
                 header("Location: /cabinet");
             }
         }

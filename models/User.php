@@ -48,20 +48,20 @@ class User
     }
 
     public static function auth($userId){
-        @session_start();
+
         $_SESSION['user_id'] = $userId;
         echo 'auth';
     }
 
     public static function logOut(){
-        @session_start();
+
         unset($_SESSION['user_id']);
         header('Location: /');
     }
 
     public static function checkLogged()
     {
-        @session_start();
+
         if(isset($_SESSION['user_id'])){
             return $_SESSION['user_id'];
         }else {
@@ -71,7 +71,7 @@ class User
 
     public static function isGuest()
     {
-        @session_start();
+
         if(!isset($_SESSION['user_id'])){
             return true;
         }else{
@@ -115,6 +115,21 @@ class User
         if($user){
             return $user['id'];
         }else { return false; }
+
+
+    }
+
+    public static function userList(){
+        $dbh = DB::getConnection();
+        $sql = "SELECT name, email FROM user";
+        $sth = $dbh->prepare($sql);
+//        $sth->bindValue(':email', $email, PDO::PARAM_STR);
+//        $sth->bindValue(':password', $password, PDO::PARAM_STR);
+        $sth->execute();
+        $user = $sth->fetchAll();
+
+            return $user;
+
 
 
     }

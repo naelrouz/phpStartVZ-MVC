@@ -14,16 +14,13 @@
                             <input type="text" name="name" value="<?php echo $name ?>" placeholder="Имя"/>
                             <?php echo $errors['password']; ?>
                             <input type="password" name="password"  value="<?php echo $password ?>" placeholder="Пароль"/>
-
                             <button type="submit" name="submit" class="btn btn-default">Изменить</button>
                         </form>
                     </div><!--/login form-->
                 </div>
                 <div class="col-sm-1">
-
                 </div>
                 <div class="col-sm-4">
-
                 </div>
             </div>
         </div>

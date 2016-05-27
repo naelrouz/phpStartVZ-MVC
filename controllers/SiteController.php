@@ -8,11 +8,13 @@
  */
 class SiteController
 {
-    public static function actionIndex(){
+    public static function actionIndex()
+    {
 
     }
 
-    public static function actionContacts(){
+    public static function actionContacts()
+    {
 
         $name = isset($_POST['name']) ? $_POST['name'] : '';
         $email = isset($_POST['email']) ? $_POST['email'] : '';
@@ -22,7 +24,6 @@ class SiteController
         $errors = false;
 
         if (isset($_POST['submit'])) {
-
 
 
 //            Блок валиации
@@ -43,15 +44,21 @@ class SiteController
 //                $subject = 'Тема письма';
 //                $message = 'Тело письма';
 //
-                $message = '<h4>'.$name.'<h4>'.'<br>'.$message;
-                $emailSendResult = mail($email,$subject,$message);
-                Debug::varDump($result);
+                $message = '<h4>' . $name . '<h4>' . '<br>' . $message;
+                $emailSendResult = mail($email, $subject, $message);
+                Debug::varDump($emailSendResult);
 
             }
         }
-        include_once ROOT.'/views/site/contacts.php';
+        include_once ROOT . '/views/site/contacts.php';
     }
 
+    public function actionAjax()
+    {
+        $userList = User::userList();
+        header("Content-Type: application/json");
+        echo json_encode($userList);
+    }
 
 
 }

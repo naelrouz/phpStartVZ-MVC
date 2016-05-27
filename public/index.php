@@ -4,7 +4,7 @@
 // Общие настройки
 ini_set('display_errors', 1);
 //
-//session_start();
+@session_start();
 //
 // Подключение файлов системы
 define('ROOT', dirname(dirname(__FILE__)));
@@ -15,3 +15,5 @@ require_once(ROOT . '/components/Router.php');
 //
 $router = new Router();
 $router->run();
+
+Debug::varDump($_SESSION['product']);

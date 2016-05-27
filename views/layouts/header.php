@@ -60,7 +60,13 @@
                 <div class="col-sm-8">
                     <div class="shop-menu pull-right">
                         <ul class="nav navbar-nav">
-                            <li><a href="#"><i class="fa fa-shopping-cart"></i> Корзина</a></li>
+                            <li>
+                                <a href="#"><i class="fa fa-shopping-cart"></i>Корзина</a>
+                                <span class="cart_quantity_input">
+                                    <?php echo Cart::countItem(); ?>
+                                </span>
+
+                            </li>
 
                             <?php if (User::isGuest()) { ?>
                                 <li><a href="/login"><i class="fa fa-lock"></i> Вход</a></li>
@@ -94,7 +100,10 @@
                             <li class="dropdown"><a href="#">Магазин<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
                                     <li><a href="/catalog/">Каталог товаров</a></li>
-                                    <li><a href="/cart/">Корзина</a></li>
+                                    <li>
+                                        <a href="/cart/">Корзинаrtrt</a>
+                                        <?php echo Cart::countItem(); ?>
+                                    </li>
                                 </ul>
                             </li>
                             <li><a href="/blog/">Блог</a></li>
