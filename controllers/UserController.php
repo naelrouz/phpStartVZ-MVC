@@ -41,7 +41,7 @@ class UserController
             if (!$userId) {
                 $li_errors['password'] = 'Пользователя с таким E-mail и паролем не зарегистрировано';
             } else  {
-                //User::auth($userId);
+                User::auth($userId);
                 header("Location: /cabinet");
             }
         }
@@ -60,7 +60,7 @@ class UserController
         $name = isset($_POST['name']) ? $_POST['name'] : '';
         $email = isset($_POST['email']) ? $_POST['email'] : '';
         $password = isset($_POST['password']) ? $_POST['password'] : '';
-        $registeRresult = ' ';
+        $registeRresult = '';
 
         $li_email = isset($_POST['email']) ? $_POST['email'] : '';
         $li_password = isset($_POST['password']) ? $_POST['password'] : '';

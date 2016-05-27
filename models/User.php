@@ -47,21 +47,19 @@ class User
         return $sth->execute();
     }
 
-    public static function auth($userId){
-
+    public static function auth($userId)
+    {
         $_SESSION['user_id'] = $userId;
-        echo 'auth';
     }
 
-    public static function logOut(){
-
+    public static function logOut()
+    {
         unset($_SESSION['user_id']);
         header('Location: /');
     }
 
     public static function checkLogged()
     {
-
         if(isset($_SESSION['user_id'])){
             return $_SESSION['user_id'];
         }else {
@@ -71,7 +69,6 @@ class User
 
     public static function isGuest()
     {
-
         if(!isset($_SESSION['user_id'])){
             return true;
         }else{
